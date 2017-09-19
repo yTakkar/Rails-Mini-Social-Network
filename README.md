@@ -22,17 +22,16 @@ bundle install
 npm install [OR] yarn
 ```
 2. Open PHPMyAdmin, create a `DB` named `rails-mini-social-network` & import `db.sql` file.
-3. Create the following environment variable:
+3. Create the following environment variables:
 ```javascript
 RAILS_DB_PASSWORD="DB PASSWORD"
+RAILS_SOCKET="MySQL Socket"
 ```
-4. Go to `config/database.yml` file, line no. `19`, and change the socket if yours is different!!
-
-5. Start the server
+4. Start the server
 ```javascript
 rails s
 ```
-6. Now, open it in browser:
+5. Now, open it in browser:
 ```javascript
 localhost:3000
 ```
