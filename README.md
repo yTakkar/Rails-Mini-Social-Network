@@ -16,12 +16,17 @@ A Mini Social-Network created with Rails!!
 ![alt text](https://raw.githubusercontent.com/yTakkar/Rails-Mini-Social-Network/master/screenshots/Snap%202017-09-19%20at%2015.12.53.png)
 
 # Usage
-1. Open PHPMyAdmin, create a `DB` named `rails-mini-social-network` & import `db.sql` file.
-2. Create the following environment variable:
+1. First install all the dependencies.
+```javascript
+bundle install
+npm install [OR] yarn
+```
+2. Open PHPMyAdmin, create a `DB` named `rails-mini-social-network` & import `db.sql` file.
+3. Create the following environment variable:
 ```javascript
 RAILS_DB_PASSWORD="DB PASSWORD"
 ```
-3. Go to `config/database.yml` file, line no. `19`, and change the socket if yours is different!!
+4. Go to `config/database.yml` file, line no. `19`, and change the socket if yours is different!!
 
 5. Start the server
 ```javascript
@@ -31,3 +36,8 @@ rails s
 ```javascript
 localhost:3000
 ```
+
+# Contribute
+Feel free to contribute!!
+
+Show your support by 🌟 the project!!
