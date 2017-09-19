@@ -1,0 +1,81 @@
+<%
+  @id = @user.id
+  @username = @user.username
+  @email = @user.email
+%>
+
+<% content_for :title, "@#{@username}" %>
+
+<div class="profile_data"
+  data-get_id="<%= @id %>"
+  data-get_username="<%= @username %>"
+  data_get_email="<%= @email %>"
+></div>
+
+<div class="aligner">
+
+  <div class='user_banner'>
+    <div class="profile_img_div">
+      <%= image_tag "ruby-red.png" %>
+    </div>
+    <div class="user_buttons">
+      <% if session[:id] == @id %>
+        <%= link_to "Create Post", new_post_path, class: "create_note_btn pri_btn" %>
+      <% else %>
+        <% if is_following(@id) %>
+          <%= link_to "Unfollow", unfollow_path(@id), :method => :post, :class => "unfollow pri_btn" %>
+          <% else %>
+          <%= link_to "Follow", follow_path(@id), :method => :post, :class => "follow pri_btn" %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="user_info">
+      <%= link_to @username, profile_path(@id), class: "user_main_link" %>
+      <span class="user_no_notes"><%= @email %></span>
+      <hr />
+      <div class="user_stats">
+        <div class="stat_post">
+          <span class="stat_hg"><%= @posts.length %></span>
+          <span class="stat_nhg">Posts</span>
+        </div>
+        <div class="stat_followers">
+          <span class="stat_hg"><%= @followers %></span>
+          <%= link_to "Followers", followers_path(@id), :class => "stat_nhg" %>
+        </div>
+        <div class="stat_followings">
+          <span class="stat_hg"><%= @followings %></span>
+          <%= link_to "Followings", followings_path(@id), :class => "stat_nhg" %>
+        </div>
+        <div class="stat_views">
+          <span class="stat_hg"><%= @views %></span>
+          <span class="stat_nhg">Profile views</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="notes">
+
+    <% unless @posts.empty? %>
+      <% @posts.each do |post| %>
+        <%= render 'partials/post', post: post %>
+      <% end %>
+    <% end %>
+
+    <% if @posts.empty? %>
+      <%
+        session[:id] == @id ?
+          @mssg = "No posts for you. Go ahead and create one!!"
+        :
+          @mssg = "#{@username} has no posts!!"
+      %>
+      <%= render 'partials/nothing', mssg: @mssg %>
+    <% end %>
+
+    <% unless @posts.empty? %>
+      <%= render 'partials/end' %>
+    <% end %>
+
+  </div>
+
+</div>

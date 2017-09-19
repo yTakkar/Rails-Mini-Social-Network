@@ -1,0 +1,33 @@
+<%= content_for :title, "View Post" %>
+
+<div class="home">
+  <div class="blog">
+    <div class="blog_c">
+      <span class="blog_title"><%= @post.title %></span>
+      <span class="blog_content"><%= @post.content %></span>
+    </div>
+    <div class="blog_actions">
+      <div class="b_a_left">
+        <%=
+          if liked(@post.id)
+            link_to "Unlike", unlike_path(@post.id), :class => "pri_btn", :method => :post
+          else
+            link_to "Like", like_path(@post.id), :class => "pri_btn", :method => :post
+          end
+        %>
+        <%= link_to "#{@likes} Likes", likes_path(@post.id), :class => "sec_btn" %>
+      </div>
+      <div class="b_a_right">
+        <%= link_to "Edit Post", edit_post_path(@post.id), class: "sec_btn" %>
+        <%=
+          link_to "Delete",
+          delete_post_path(@post.id),
+          :class => "sec_btn blog_dlt",
+          :data => { :confirm => "Are you sure?" },
+          :method => :delete
+        %>
+        <%= link_to "Done", profile_path(session[:id]), class: "pri_btn blog_back" %>
+      </div>
+    </div>
+  </div>
+</div>

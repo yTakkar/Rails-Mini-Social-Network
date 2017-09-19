@@ -1,0 +1,19 @@
+<% content_for :title, "Login" %>
+
+<div class="log_sign">
+  <%= link_to "Need an account?", signup_path, class: "pri_btn" %>
+</div>
+
+<div class="login cua ">
+
+  <div class="display_text">
+    <span>Get started again</span>
+  </div>
+
+  <%= form_tag log_user_path do %>
+    <%= text_field_tag :username, params[:username], class:"l_username", autofocus:true, required:true, spellcheck:false, autocomplete:false, placeholder:'Username' %>
+    <%= password_field_tag :password, params[:password], class:"l_password", required:true, placeholder:'Password' %>
+    <%= submit_tag "Login to continue", class:"l_submit" %>
+  <% end %>
+
+</div>

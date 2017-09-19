@@ -1,0 +1,23 @@
+<%= content_for :title, "Explore" %>
+
+<div class="explore">
+
+  <div class="explores">
+
+    <% if !@explore.empty? %>
+      <% @explore.each do |e| %>
+        <%= render 'partials/list', type: 'explores', f: e %>
+      <% end %>
+    <% end %>
+
+    <% if @explore.empty? %>
+      <%= render 'partials/nothing', mssg: "No one to explore!!" %>
+    <% end %>
+
+    <% if !@explore.empty? %>
+      <%= render 'partials/end' %>
+    <% end %>
+
+  </div>
+
+</div>

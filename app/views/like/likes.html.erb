@@ -1,0 +1,23 @@
+<%= content_for :title, "Likes" %>
+
+<div class="explore">
+
+  <div class="explores">
+
+    <% if !@likes.empty? %>
+      <% @likes.each do |l| %>
+        <%= render 'partials/list', type: 'likes', f: l %>
+      <% end %>
+    <% end %>
+
+    <% if @likes.empty? %>
+      <%= render 'partials/nothing', mssg: "Post has no likes!!" %>
+    <% end %>
+
+    <% if !@likes.empty? %>
+      <%= render 'partials/end' %>
+    <% end %>
+
+  </div>
+
+</div>

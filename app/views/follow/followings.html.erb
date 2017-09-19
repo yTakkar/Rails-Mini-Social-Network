@@ -1,0 +1,23 @@
+<%= content_for :title, "#{get(params[:id], 'username')}'s Followings" %>
+
+<div class="explore">
+
+  <div class="explores">
+
+    <% if !@followings.empty? %>
+      <% @followings.each do |f| %>
+        <%= render 'partials/list', type: 'followings', f: f %>
+      <% end %>
+    <% end %>
+
+    <% if @followings.empty? %>
+      <%= render 'partials/nothing', mssg: "#{get(params[:id], 'username')} has no followers!!" %>
+    <% end %>
+
+    <% if !@followings.empty? %>
+      <%= render 'partials/end' %>
+    <% end %>
+
+  </div>
+
+</div>

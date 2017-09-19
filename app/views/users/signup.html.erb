@@ -1,0 +1,26 @@
+<% content_for :title, "Signup" %>
+
+<div class="log_sign">
+  <%= link_to "Already have an account?", login_path, class: "pri_btn" %>
+</div>
+
+<div class="register cua ">
+
+  <div class="display_text">
+    <span>Get started now and let the fun begins</span>
+  </div>
+
+  <%= form_for @user, url: { action: 'create_user' } do |f| %>
+
+    <% if @user.errors.any? %>
+      <%= render 'partials/mssg', mssg: @user.errors.full_messages[0] %>
+    <% end %>
+
+    <%= f.text_field :username, class:"r_username", autofocus:true, spellcheck:false, autocomplete:false, placeholder:'Username', required: true %>
+    <%= f.email_field :email, class:"r_email", spellcheck:false, autocomplete:false, placeholder:'Email', required:true %>
+    <%= f.password_field :password, class: "r_password", placeholder: 'Password', required: true %>
+    <%= f.submit "Signup for free", class:"r_submit" %>
+
+  <% end %>
+
+</div>

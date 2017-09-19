@@ -1,0 +1,27 @@
+<%= render 'partials/tophead' %>
+
+<% if flash.any? %>
+  <%= render 'partials/mssg', mssg: flash[:notice] %>
+<% end %>
+
+<% if !session[:id] %>
+  <div class="index_header">
+    <div class="right">
+      <%= link_to "Home", welcome_path %>
+      <%= link_to "Signup", signup_path %>
+      <%= link_to "Login", login_path %>
+    </div>
+  </div>
+<% else %>
+  <div class="header_loggedin">
+    <div class="left">
+      <%= link_to "Home", root_path %>
+      <%= link_to "New post", new_post_path %>
+      <%= link_to "Explore", explore_path %>
+    </div>
+    <div class="right">
+      <%= link_to "Profile", profile_path(session[:id]) %>
+      <%= link_to "Logout", logout_path %>
+    </div>
+  </div>
+<% end %>

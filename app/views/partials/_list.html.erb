@@ -1,0 +1,28 @@
+<%
+  if type == "followers"
+    user = f.follow_by
+  elsif type == "followings"
+    user = f.follow_to
+  elsif type == "explores"
+    user = f.id
+  elsif type == "likes"
+    user = f.like_by
+  end
+%>
+
+<div class="explores_list">
+  <div class="exl_main">
+    <%= image_tag "ruby-red.png" %>
+      <div class="exl_content">
+        <span class="exl_username"><%= username_decider(user) %></span>
+        <div class="exl_desc">
+          <span class="exl_email"><%= get(user, "email") %></span>
+          <span class="exl_desc_sep">•</span>
+          <span class="exl_followers"><%= no_of_followers(user) %> Followers</span>
+        </div>
+      </div>
+  </div>
+  <div class="exl_ff">
+    <%= link_to "Profile", profile_path(user), :class => "pri_btn" %>
+  </div>
+</div>

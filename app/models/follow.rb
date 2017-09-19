@@ -1,0 +1,2 @@
+class Follow < ApplicationRecord
+end
