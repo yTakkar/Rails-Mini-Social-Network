@@ -376,49 +376,6 @@
 
 }
 
-// BLOG PAGE
-.blog{
-  position: relative;
-  font-size: 14px;
-  background: #fff;
-  padding: 15px;
-  border-radius: 3px;
-  box-shadow: 0px 0px 5px 0px rgba(0,0,0,.1);
-  top: 80px;
-
-  & > * {
-    display: block;
-    margin-bottom: 15px;
-  }
-
-  & .blog_actions {
-    text-align: right;
-    margin-bottom: 0px;
-
-    & a {
-      padding: 4px 10px;
-      display: inline-block;
-    }
-  }
-
-  & .blog_c {
-
-    & .blog_title {
-      font-weight: 600;
-      font-size: 17px;
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    & .blog_content {
-      display: block;
-    }
-
-  }
-
-
-}
-
 // PROFILE PAGE
 .profile {
   position: absolute;
