@@ -1,11 +1,11 @@
 # Rails-Mini-Social-Network
 A Mini Social-Network created with Rails!!
 
-# Quick Links
+<!-- # Quick Links
 1. [Screenshots](#screenshots)
-2. [Usage](#usage)
+2. [Usage](#usage) -->
 
-# Screenshots
+<!-- # Screenshots
 ![alt text](https://raw.githubusercontent.com/yTakkar/Rails-Mini-Social-Network/master/screenshots/Snap%202017-09-19%20at%2015.11.54.png)
 ![alt text](https://raw.githubusercontent.com/yTakkar/Rails-Mini-Social-Network/master/screenshots/Snap%202017-09-19%20at%2015.14.34.png)
 ![alt text](https://raw.githubusercontent.com/yTakkar/Rails-Mini-Social-Network/master/screenshots/Snap%202017-09-19%20at%2015.12.22.png)
@@ -13,7 +13,7 @@ A Mini Social-Network created with Rails!!
 ![alt text](https://raw.githubusercontent.com/yTakkar/Rails-Mini-Social-Network/master/screenshots/Snap%202017-09-19%20at%2015.12.08.png)
 ![alt text](https://raw.githubusercontent.com/yTakkar/Rails-Mini-Social-Network/master/screenshots/Snap%202017-09-19%20at%2015.12.16.png)
 ![alt text](https://raw.githubusercontent.com/yTakkar/Rails-Mini-Social-Network/master/screenshots/Snap%202017-09-19%20at%2015.12.30.png)
-![alt text](https://raw.githubusercontent.com/yTakkar/Rails-Mini-Social-Network/master/screenshots/Snap%202017-09-19%20at%2015.12.53.png)
+![alt text](https://raw.githubusercontent.com/yTakkar/Rails-Mini-Social-Network/master/screenshots/Snap%202017-09-19%20at%2015.12.53.png) -->
 
 # Usage
 1. First install all the dependencies.
