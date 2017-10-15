@@ -61,6 +61,36 @@ class UsersController < ApplicationController
     end
   end
 
+  def deactivate
+    loggedIn
+    if is_user_valid(params[:id])
+      render 'deactivate'
+    else
+      invalid_user
+    end
+  end
+
+  def delete_account
+    user = session[:id]
+
+    View.where(:view_by => user).destroy_all
+    View.where(:view_to => user).destroy_all
+    Follow.where(:follow_by => user).destroy_all
+    Follow.where(:follow_to => user).destroy_all
+    Like.where(:like_by => user).destroy_all
+
+    Post.where(:user => user).each do |post|
+      pl = Like.find_by(:post => post.id)
+      pl.destroy unless pl == nil
+    end
+
+    Post.where(:user => user).destroy_all
+    User.find_by(:id => user).destroy
+
+    reset_session
+    redirect_to login_path, :notice => "Your account is now deactivated!!"
+  end
+
   private def user_params
     params.require(:user).permit(:username, :email, :password)
   end

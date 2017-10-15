@@ -1,0 +1,15 @@
+<%= content_for :title, "Deactivate your account" %>
+
+<div class="registered deactivate">
+  <span class="deactivate_title">Deactivate your account?</span>
+  <span>All of your posts, followers, likes & other info will be permanently deleted. And you won't be able to find it again.</span>
+  <div class="deactivate_btn">
+    <%=
+      link_to "Deactivate",
+      delete_account_path(session[:id]),
+      :class => "pri_btn d_btn",
+      :data => { :confirm => "Are you sure?" },
+      :method => :delete
+    %>
+  </div>
+</div>

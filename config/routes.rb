@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     post 'log_user' => :log_user
     get 'logout' => :logout
     get 'profile/:id' => :profile, as: 'profile'
+    get 'deactivate/:id' => :deactivate, as: 'deactivate'
+    delete 'delete_account/:id' => :delete_account, as: 'delete_account'
   end
 
   # Pages
