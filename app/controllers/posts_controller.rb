@@ -23,6 +23,7 @@ class PostsController < ApplicationController
   end
 
   def delete_post
+    Like.find_by(:post => params[:id]).destroy
     @post = Post.find_by(:id => params[:id])
     @post.destroy
     redirect_to profile_path(session[:id]), :notice => "Post deleted!!"
