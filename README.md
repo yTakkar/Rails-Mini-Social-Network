@@ -24,10 +24,14 @@ A Mini Social-Network created with Rails!!
 
 # Usage
 1. First install all the dependencies.
-```javascript
+```bash
+# ruby dependencies
 bundle install
-npm install [OR] yarn
+
+# js dependencies
+npm install # or yarn
 ```
+
 2. Open PHPMyAdmin, create a `DB` named `rails-mini-social-network` & import `db.sql` file.
 3. Create the following environment variables:
 ```javascript
