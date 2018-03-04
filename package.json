@@ -19,8 +19,8 @@
     "migrate": "rails db:migrate"
   },
   "devDependencies": {
-    "babel-core": "^6.24.1",
-    "babel-loader": "^6.4.1",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.3",
     "babel-preset-env": "^1.3.3",
     "eslint": "^4.6.1"
   },
