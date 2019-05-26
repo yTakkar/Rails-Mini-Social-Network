@@ -1,6 +1,8 @@
 # Rails-Mini-Social-Network
 A Mini Social-Network created with Rails!!
 
+**No longer maintained. But it works**
+
 # Another Versions
 **[React Version](https://github.com/yTakkar/React-Mini-Social-Network)**
 
